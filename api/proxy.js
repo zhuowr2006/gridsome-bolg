@@ -3,14 +3,14 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = (req, res) => {
   let target = ''
-  
+  console.log('ttttt',req);
   // 处理代理目标地址
   // if (req.url.includes('/api/front')) {
   //   target = 'http://edufront.lagou.com/'
   // } else if (req.url.startsWith('/api/boss')) {
   //   target = 'http://eduboss.lagou.com/'
   // }
-  
+
   if (req.url.includes('/uploads')) {
     target = 'http://1.116.145.169:1337/'
   }

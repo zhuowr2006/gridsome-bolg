@@ -1,6 +1,6 @@
 {
   "routes": [
-    { // 所有以 /uploads/ 开头的请求转发到 /api/proxy
+    {
       "src": "/uploads/(.*)",
       "dest": "/api/proxy"
     }
