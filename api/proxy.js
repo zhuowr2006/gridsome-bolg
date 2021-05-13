@@ -11,8 +11,11 @@ module.exports = (req, res) => {
   //   target = 'http://eduboss.lagou.com/'
   // }
 
-  if (req.url.includes('/uploads')) {
-    target = 'http://1.116.145.169:1337/'
+  // if (req.url.startsWith('/imgUrl')) {
+  //   target = 'http://1.116.145.169:1337'
+  // }
+  if (req.url.startsWith('/uploads')) {
+    target = 'http://1.116.145.169:1337'
   }
   
   // 创建代理对象并转发请求

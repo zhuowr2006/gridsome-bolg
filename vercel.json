@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/uploads", "destination": "/api/proxy" }
+    { "source": "/uploads/(.*)", "destination": "/api/proxy" }
   ]
 }
