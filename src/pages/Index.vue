@@ -67,7 +67,7 @@ export default {
    methods:{
      getImg(edge){
       let host=''
-      if(window.location.hostname==='localhost'){//本地，直接使用服务器地址
+      if(this.window.location.hostname==='localhost'){//本地，直接使用服务器地址
         host=this.GRIDSOME_API_URL
       }
       //vercel上则直接使用默认的host,为了触发代理
