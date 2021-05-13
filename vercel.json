@@ -1,8 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/uploads/(.*)",
-      "dest": "/api/proxy"
-    }
+  "redirects": [
+    { "source": "/uploads", "destination": "/api/proxy" }
   ]
 }
