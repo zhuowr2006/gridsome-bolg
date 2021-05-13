@@ -9,6 +9,7 @@ module.exports = (req, res) => {
   // } else if (req.url.startsWith('/api/boss')) {
   //   target = 'http://eduboss.lagou.com/'
   // }
+  console.log(req,'====',req.url);
   if (req.url.includes('/uploads')) {
     target = 'http://1.116.145.169:1337'
   }
