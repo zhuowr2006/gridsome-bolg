@@ -12,7 +12,7 @@
       </h1></div>
       
       <div class="post-preview" v-for="edge in $page.newList.edges" :key="edge.node.id">
-         <img :src="GRIDSOME_API_URL+getImg(edge)" alt="" style="width: 100%;">
+         <img :src="getImg(edge)" alt="" style="width: 100%;">
          <h3 class="post-title" style="font-size: 1rem;">
               {{ edge.node.title }}
             </h3>
@@ -66,7 +66,12 @@ export default {
   },
    methods:{
      getImg(edge){
-      return edge.node.img?edge.node.img.url:''
+      let host=''
+      if(window.location.hostname==='localhost'){//本地，直接使用服务器地址
+        host=this.GRIDSOME_API_URL
+      }
+      //vercel上则直接使用默认的host,为了触发代理
+      return edge.node.img?host+edge.node.img.url:''
     }
   }
 }
