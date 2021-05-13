@@ -66,11 +66,11 @@ export default {
   },
    methods:{
      getImg(edge){
-      let host=''
-      if(this.window.location.hostname==='localhost'){//本地，直接使用服务器地址
-        host=this.GRIDSOME_API_URL
+      //  +
+      let host=this.GRIDSOME_API_URL
+      if(process.env.NODE_ENV === 'production'){//本地，直接使用服务器地址
+        host=''
       }
-      //vercel上则直接使用默认的host,为了触发代理
       return edge.node.img?host+edge.node.img.url:''
     }
   }
