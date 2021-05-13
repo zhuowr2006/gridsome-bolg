@@ -14,7 +14,7 @@
             <g-link class="nav-link" to="/">Home</g-link>
           </li> -->
           <li class="nav-item">
-            <g-link class="nav-link" to="/Journal">Journal</g-link>
+            <g-link class="nav-link" to="/journal">Journal</g-link>
           </li>
           <li class="nav-item">
             <g-link class="nav-link" to="/contact">Say Hi!</g-link>
