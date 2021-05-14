@@ -9,8 +9,7 @@ module.exports = (req, res) => {
   // } else if (req.url.startsWith('/api/boss')) {
   //   target = 'http://eduboss.lagou.com/'
   // }
-  console.log(req,'====',req.url);
-  if (req.url.includes('/uploads')) {
+  if (req.url.startsWith('/backend')) {
     target = 'http://1.116.145.169:1337'
   }
   
@@ -18,11 +17,10 @@ module.exports = (req, res) => {
   createProxyMiddleware({
     target,
     changeOrigin: true,
-    // pathRewrite: {
-    //   // 通过路径重写，去除请求路径中的 /api
-    //   //   例如 /api/boss/xxx 将被转发到 http://eduboss.lagou.com/boss/xxx
-    //   //   例如 /api/front/xxx 将被转发到 http://eduboss.lagou.com/front/xxx
-    //   '^/api/': ''
-    // }
+    pathRewrite: {
+      // 通过路径重写，去除请求路径中的 `/backend`
+      // 例如 /backend/user/login 将被转发到 http://backend-api.com/user/login
+      '^/backend/': '/'
+    }
   })(req, res)
 }

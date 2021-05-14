@@ -69,7 +69,7 @@ export default {
       //  +
       let host=this.GRIDSOME_API_URL
       if(process.env.NODE_ENV === 'production'){//本地，直接使用服务器地址
-        host=''
+        host='/backend'
       }
       return edge.node.img?host+edge.node.img.url:''
     }
